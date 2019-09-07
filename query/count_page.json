@@ -1,0 +1,1 @@
+{"query":"SELECT COUNT(distinct page) AS NumberOfPages FROM wikipedia"}
