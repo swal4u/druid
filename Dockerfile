@@ -31,6 +31,9 @@ RUN wget -c ${DRUID_BINARY_DOWNLOAD_URL} -O - | tar -xz && \
     wget -c ${ZOOKEEPER_BINARY_DOWNLOAD_URL} -O - | tar -xz && \
     mv ${ZOOKEEPER_BINARY_ARCHIVE_NAME} /usr/local/druid/zk
 
+# Modify configuration to have exact count distinct
+ADD $PWD/broker/runtime.properties /usr/local/druid/conf/druid/single-server/micro-quickstart/broker/runtime.properties
+
 EXPOSE 8888
 
 CMD ["start-micro-quickstart"]
